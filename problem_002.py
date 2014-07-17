@@ -13,19 +13,35 @@ do not exceed four million, find the sum of the even-valued terms.
 '''
 
 import timeit
+import numpy as np
 
+# dynamic programming algorithm
 def loop(n):
     t = 0
     f = 1
     l = 1
     while l < n:
+        if f % 2 == 0:
+            t += f
         new = f + l
-        if new % 2 == 0:
-            t += new
-        f = l
-        l = new
+        l = f
+        f = new
+    return t
+
+# omission using matrix
+def loop_matrix(n):
+    t = 0
+    m = np.array([[3, 2], [2, 1]])
+    f = np.array([2, 1])
+    while f[0] < n:
+        if f[0] % 2 == 0:
+            t += f[0]
+        new = np.dot(m, f)
+        f = new
     return t
 
 if __name__ == '__main__':
     print loop(4000000)
+    print loop_matrix(4000000)
     print timeit.Timer('problem_002.loop(4000000)', 'import problem_002').timeit(100)
+    print timeit.Timer('problem_002.loop_matrix(4000000)', 'import problem_002').timeit(100)
