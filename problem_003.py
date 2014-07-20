@@ -41,6 +41,7 @@ class Eratosthenes:
             return self.sieve([n for n in numbers[1:] if n % head != 0])
 
 # Fermat's little theorem
+# see http://en.wikipedia.org/wiki/Fermat's_little_theorem
 class Fermat:
     def upto(self, n):
         if n < 2:

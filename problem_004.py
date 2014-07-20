@@ -12,7 +12,7 @@ import timeit
 def loop(min, max):
     max_pal = 0;
     for i in range(max, min, -1):
-        for j in range(i, min, -1):
+        for j in range(i, min, -1): # by starting i, avoid duplicate multiplication
             if is_palindromic(i*j):
                 max_pal = i*j if i*j > max_pal else max_pal
     return max_pal

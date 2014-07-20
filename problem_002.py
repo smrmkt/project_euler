@@ -28,11 +28,12 @@ def loop(n):
         f = new
     return t
 
-# omission using matrix
+# reduce calculation by the fact that even-valued item appears in the two intervals.
+# see http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form
 def loop_matrix(n):
     t = 0
-    m = np.array([[3, 2], [2, 1]])
-    f = np.array([2, 1])
+    m = np.array([[3, 2], [2, 1]]) # multiply [[1, 1], [1, 1]] two times
+    f = np.array([2, 1]) # first even-valued and previous item
     while f[0] < n:
         if f[0] % 2 == 0:
             t += f[0]

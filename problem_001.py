@@ -10,6 +10,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 import timeit
 
 # slow
+# simple loop
 def loop(n):
     t = 0
     for i in range(1, n+1):
@@ -18,6 +19,7 @@ def loop(n):
     return t
 
 # fast
+# calculate each numbers' sum and subtract common multiplier
 def calc(n):
     t03 = 3*(n/3)*(n/3+1)/2
     t05 = 5*(n/5)*(n/5+1)/2
