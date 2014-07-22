@@ -12,7 +12,6 @@ Find the difference between the sum of the squares of the
 first one hundred natural numbers and the square of the sum.
 '''
 
-import math
 import timeit
 
 def loop(n):
@@ -22,5 +21,5 @@ def loop(n):
     return ((1+n)*n/2)**2 - s
 
 if __name__ == '__main__':
-    print loop(100)
-    print timeit.Timer('problem_005.loop(20)', 'import problem_005').timeit(10)
+    print loop(20)
+    print timeit.Timer('problem_006.loop(20)', 'import problem_006').timeit(10)
