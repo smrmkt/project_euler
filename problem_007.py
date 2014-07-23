@@ -16,6 +16,7 @@ def loop(n):
         p, l = get_prime(p, l)
     return max(l)
 
+# dynamic programing
 def get_prime(p, l):
     while True:
         p += 1
