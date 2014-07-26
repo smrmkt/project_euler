@@ -61,7 +61,7 @@ def loop(str, adj):
         if '1' in str[i:i+adj]: continue # ad-hoc heuristic for speed improvement
         for j in range(0, adj):
             t *= int(str[i+j])
-        p = t if t > p else p
+        if t > p: p = t
     return p
 
 if __name__ == '__main__':
