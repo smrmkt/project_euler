@@ -55,7 +55,7 @@ num_str = "73167176531330624919225119674426574742355349194934" \
 
 def loop(str, adj):
     p = 0
-    for i in range(0, len(str)-adj):
+    for i in range(len(str)-adj):
         t = 1
         if '0' in str[i:i+adj]: continue # 0 multiplication means 0
         if '1' in str[i:i+adj]: continue # ad-hoc heuristic for speed improvement
