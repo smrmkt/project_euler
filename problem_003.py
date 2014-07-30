@@ -82,7 +82,6 @@ class MillerRabin:
             a = random.randint(1, n-1)
             t = d
             y = pow(a, t, n)
-            print n, y, t, a
             while t != n - 1 and y != 1 and y != n - 1:
                 y = pow(y, 2, n)
                 t <<= 1
