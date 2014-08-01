@@ -107,4 +107,5 @@ def diagonal_down(m, n):
 
 if __name__ == '__main__':
     print loop(matrix, 4)
-    # print timeit.Timer('problem_011.loop()', 'import problem_011').timeit(1)
+    print timeit.Timer('problem_011.loop(problem_011.matrix, 4)',
+                       'import problem_011').timeit(10)
