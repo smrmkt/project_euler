@@ -10,8 +10,8 @@ import timeit
 
 
 def loop(n):
-        chars = str(2**n)
-        return sum([int(chars[i]) for i in range(len(chars))])
+    chars = str(2**n)
+    return sum([int(chars[i]) for i in range(len(chars))])
 
 if __name__ == '__main__':
     print loop(1000)
