@@ -15,7 +15,7 @@ import timeit
 
 def calc():
     eqs = []
-    for i in range(3, 2540160):
+    for i in range(3, 2177280):
         if i == sum(map(lambda j: math.factorial(j), map(int, list(str(i))))):
             eqs.append(i)
     return eqs
