@@ -31,7 +31,7 @@ def cut_left(n):
     l10 = int(math.log10(n))
     if l10 == 0:
         return 0 if n in [2, 3, 5, 7] else 1
-    return is_not_prime(n)+cut_left(n-n/(10**l10)*(10**l10))
+    return is_not_prime(n)+cut_left(n%(10**int(math.log(n,10))))
 
 
 def is_not_prime(n):
