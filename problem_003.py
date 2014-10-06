@@ -90,8 +90,8 @@ class MillerRabin:
         return True
 
 if __name__ == '__main__':
-    n = 1000
-    print Loop().upto(n)
-    print Eratosthenes().upto(n)
+    n = 600851475143
+    # print Loop().upto(n)
+    # print Eratosthenes().upto(n)
     print Fermat().upto(n)
-    print MillerRabin().upto(n, 1)
+    # print MillerRabin().upto(n, 1)
