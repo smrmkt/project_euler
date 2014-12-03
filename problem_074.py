@@ -31,13 +31,15 @@ contain exactly sixty non-repeating terms?
 import math
 import timeit
 
+
 factorial = [math.factorial(i) for i in range(10)]
+chain = []
 
 
 def sum_of_factorial(n):
     return sum([factorial[int(s)] for s in list(str(n))])
 
-
+# slow
 def count_chain(n):
     chain = [n]
     num = sum_of_factorial(n)
@@ -47,8 +49,34 @@ def count_chain(n):
     return len(chain)
 
 
+def memoize(f):
+    cache = {}
+    def helper(x):
+        if x not in cache:
+            cache[x] = f(x)
+        return cache[x]
+    return helper
+
+# fast using cache with memoize decorator
+@memoize
+def recursive_chain(n):
+    chain.append(n)
+    num = sum_of_factorial(n)
+    if num in chain:
+        return 1
+    chain.append(num)
+    return 1 + recursive_chain(num)
+
+
 def calc(n, rep):
-    return len(filter(lambda i: i==rep, [count_chain(i) for i in range(1, n+1)]))
+    global chain
+    count = 0
+    for i in range(1, n+1):
+        # if count_chain(i) == rep:
+        if recursive_chain(i) == rep:
+            count += 1
+        chain = []
+    return count
 
 
 if __name__ == '__main__':
