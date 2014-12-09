@@ -19,14 +19,14 @@ import timeit
 
 def memoize(f):
     cache = {}
-    def helper(x, y):
-        if (x, y) not in cache:
-            cache[(x, y)] = f(x, y)
-        return cache[(x, y)]
+    def helper(*args):
+        if args not in cache:
+            cache[args] = f(*args)
+        return cache[args]
     return helper
 
 
-#@memoize
+@memoize
 def p(k, n):
     if k > n:
         return 0
